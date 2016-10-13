@@ -404,7 +404,11 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
       cropIntent.setDataAndType(picUri, "image/*");
       // set crop properties
       cropIntent.putExtra("crop", "true");
-
+      cropIntent.putExtra("scale", true);
+      cropIntent.putExtra("scaleUpIfNeeded", true);
+      cropIntent.putExtra("return-data", false);
+      cropIntent.putExtra("noFaceDetection", true);
+      
       // indicate output X and Y
       if (targetWidth > 0) {
           cropIntent.putExtra("outputX", targetWidth);
